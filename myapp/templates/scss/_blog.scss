@@ -1,0 +1,60 @@
+// 
+// blog.scss
+// 
+
+.blog{
+    .blog-item{
+        border-radius: 20px;
+        .blog-image{
+            position: relative;
+            img{
+                border-radius: 20px;
+            }
+            .blog-image-icon{
+                height: 3.8rem;
+                width: 3.8rem;
+                line-height: 3.4rem;
+                text-align: center;
+                border-radius: 50%;
+               color: $white;
+                position: absolute;
+                bottom: -15%;
+                left: 10%;
+                border: 4px solid $white;
+            }
+        }
+
+        .blog-content{
+            a{
+                color: $dark !important;
+                transition: all 0.5s;
+
+                &:hover{
+                    color: $primary !important;
+                }
+            }
+        }
+    }
+}
+
+
+body[data-layout-mode="dark"] {
+    .blog{
+        background-color: $gray-dark-300 !important;
+        color: $white;
+
+        .blog-item{
+            background-color: $body-dark-bg-light;
+        }
+
+        .blog-image-icon{
+            border: 4px solid $gray-dark-300 !important;
+        }
+
+        .blog-content{
+            a{
+                color: $muted !important;
+            }
+        }
+    }
+}

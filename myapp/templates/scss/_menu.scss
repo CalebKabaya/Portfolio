@@ -1,0 +1,293 @@
+//
+// menu.scss
+//
+
+/**********************NAVBAR***********************/
+
+.navbar {
+  transition: all 0.5s ease;
+  padding: 0;
+  background-color: transparent;
+  padding: 8px 0;
+
+  .navbar-nav {
+    .nav-link {
+      color: rgba($black, 0.7);
+      font-size: 13px;
+      background-color: transparent;
+      padding: 28px 20px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      position: relative;
+      font-weight: 600;
+
+      &:hover,
+      &:active,
+      &.active,
+      &:focus {
+        color: $primary ;
+      }
+    }
+  }
+
+
+  .navbar-dark{
+    .navbar-nav {
+      .nav-link {
+        color: rgba($dark, 0.7) !important;
+
+        &:hover,
+        &:active,
+        &.active,
+        &:focus {
+          color: $black !important ;
+        }        
+      }
+    }
+  }
+
+  .navbar-toggler {
+    padding: 0px;
+    border: none;
+    font-size: 24px;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .logo {
+    .logo-light {
+      display: none;
+    }
+    .logo-dark {
+      display: block;
+    }
+  }
+
+
+}
+
+.nav-white{
+  .navbar-nav {
+    .nav-link {
+      color: rgba($white, 0.8);
+
+      &:hover,
+      &:active,
+      &.active {
+        color: $primary ;
+      }
+    }
+  }
+ 
+}
+
+.dropdown-item {
+
+  &:hover,
+  &.active,
+  &:active {
+    color: $primary;
+    background-color: $white;
+  }
+}
+
+
+//nav-sticy
+.nav-sticky {
+
+  &.navbar {
+    background: $white;
+    margin-top: 0px;
+    box-shadow: 0px 3px 10px 0px rgba($dark, 0.08);
+    padding: 0;
+ }
+
+ .nav-link{
+   color: rgba($dark, 0.6) !important;
+   &:hover,
+  &.active,
+  &:active {
+    color: $primary !important;
+  }
+ }
+
+    .nav-brand-logo {
+      .logo-dark {
+        display: inline-block;
+      }
+
+      .logo-light {
+        display: none;
+      }
+    }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    margin-top: 0px;
+  }
+}
+
+
+@media only screen and (min-width: 1600px) {
+  .container-fluid {
+    padding-right: 200px;
+    padding-left: 200px;
+  }
+}
+
+@media (max-width:992px) {
+
+  .navbar {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          padding: 12px 15px;
+        }
+      }
+    }
+  }
+
+  .navbar-collapse {
+    max-height: 430px;
+    padding: 0;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 55px;
+    background: $white;
+    
+    box-shadow: 0px 8px 8px -6px rgba($dark, 0.08);
+  }
+
+  .navbar {
+    background-color: #ffffff !important;
+    padding: 16px 0;
+  }
+
+  .nav-sticky {
+    &.navbar {
+      padding: 16px 0;
+   }
+  }
+
+  .nav-white{
+    .navbar-nav {
+      .nav-link {
+        color: rgba($black, 0.8);
+      }
+    }
+  }
+}
+
+textarea.form-control {
+  min-height: calc(3.5em + 1.75rem + 5px);
+}
+
+
+
+
+
+body[data-layout-mode='dark'] {
+
+  .navbar{
+    background-color: transparent !important;
+
+    .navbar-nav {
+      .nav-link {
+        color: $white !important;
+
+        &:hover,
+        &:active,
+        &.active {
+          color: $primary !important;
+        }
+      }
+    }
+
+    .navbar-toggler i {
+      font-size: 24px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: $white !important;
+    }
+
+    .logo {
+      .logo-light {
+        display: block !important;
+      }
+      .logo-dark {
+        display: none !important;
+      }
+    }
+  
+
+
+    .navbar-dark{
+      .navbar-nav {
+        .nav-link {
+          color: rgba($white, 0.5) !important;
+  
+          &:hover,
+          &:active,
+          &.active,
+          &:focus {
+            color: $white !important ;
+          }        
+        }
+      }
+    }
+  }
+
+  .nav-sticky, &.navbar{
+    background-color: $body-dark-bg !important;
+    .navbar-toggler i {
+      font-size: 24px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: $white !important;
+    }
+
+    .navbar-nav {
+      .nav-link {
+        color: $gray-100;
+
+        &:hover,
+        &.active {
+          color: $primary;
+        }
+      }
+    }
+
+    .navbar-brand {
+      color: $primary;
+      font-weight: 600;
+      font-size: 26px;
+
+      span {
+        color: $white;
+        font-weight: 800;
+      }
+    }
+
+  }
+
+  @media (max-width:992px) {
+
+    .navbar{
+      background-color: $body-dark-bg-light !important;
+    }
+    .navbar-collapse{
+      background-color: $body-dark-bg-light !important;
+    }
+    .nav-sticky{
+      .navbar-collapse{
+        background-color: $body-dark-bg !important;
+
+      }
+    }
+
+  }
+}

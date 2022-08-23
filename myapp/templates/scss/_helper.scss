@@ -1,0 +1,143 @@
+//
+// helper.scss
+//
+
+/*******color Loop*******/
+@each $color,
+$value in $theme-colors {
+    .text-#{$color} {
+        color: $value !important;
+    }
+
+    .bg-#{$color} {
+        background-color: $value !important;
+    }
+}
+
+.section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    position: relative;
+}
+
+/*******font-size*******/
+
+$font-size-mixing: 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 30, 32, 36, 40, 48 ,50;
+
+@each $font-size-mixing in $font-size-mixing {
+  .fs-#{$font-size-mixing} {
+    font-size: #{$font-size-mixing}px !important;
+  }
+}
+
+
+/*******font-weight*******/
+
+
+.fw-semibold {
+    font-weight: $fw-semibold;
+}
+
+.fw-bold {
+    font-weight: $fw-bold;
+}
+
+.box-shadow {
+    box-shadow: $box-shadow;
+}
+
+.ls-1{
+    letter-spacing: 1px;
+}
+
+.bg-overlay {
+    background-color: rgba(22, 36, 34, 0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-overlay-white {
+    background-color: rgba(255, 255, 255, 0.65);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.avatar-xs {
+    height: 2rem;
+    width: 2rem;
+    line-height: 2rem;
+  }
+  
+  .avatar-sm {
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+  }
+  
+  .avatar-md {
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+  }
+  
+  .avatar-lg {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+  
+  .avatar-xl {
+    height: 6rem;
+    width: 6rem;
+  }
+  
+  .avatar-xxl {
+    height: 8rem;
+    width: 8rem;
+  }
+
+.btn-sm {
+    padding: 7px 16px;
+    font-size: 10px;
+}
+
+.para-width {
+  max-width: 600px;
+}
+
+.modal {
+    .modal-dialog {
+      .btn-close {
+        width: 26px;
+        height: 26px;
+        background-color: #fff;
+        border-radius: 5px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 3;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
+  
+      &:hover {
+        .btn-close {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  
+  .para-width{
+    max-width: 650px;
+  }
+  

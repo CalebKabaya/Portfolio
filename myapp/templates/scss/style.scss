@@ -1,0 +1,34 @@
+/* Template Name: Harold
+   File Description: Main Css file of the template
+*/
+
+/****************************************
+
+01.variables
+02.general
+03.helper
+04.components
+05.menu
+06.home
+
+*****************************************/
+
+@import "variables";
+@import "responsive";
+@import "menu";
+@import "helper";
+@import "general";
+@import "components";
+@import "dark_light";
+@import "home";
+@import "about-me";
+@import "service";
+@import "testi";
+@import "counter";
+@import "pricing";
+@import "my-work";
+@import "blog";
+@import "contact";
+@import "footer";
+
+

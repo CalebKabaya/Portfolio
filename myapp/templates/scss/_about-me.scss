@@ -1,0 +1,182 @@
+// 
+// about-me
+// 
+
+
+.about-me {
+    background-color: $white;
+    .about-box {
+        border-radius: 20px;
+        box-shadow: $box-shadow;
+        .progress {
+            .progress-bar {
+                animation: bg-change 6s linear infinite;
+            }
+        }
+    }
+
+    .nav-pills {
+        .nav-item {
+            .nav-link {
+                color: $muted;
+                margin: 0 10px;
+                border-radius: 0 !important;
+
+                &.active,
+                &:active,
+                &:focus {
+                    animation: color-change 6s linear infinite;
+                    border-bottom: solid 2px #ff1493;
+                    background-color: transparent;
+                }
+            }
+        }
+
+    }
+
+    .experience {
+        .border-left {
+            &::after {
+                content: "";
+                position: absolute;
+                width: 2px;
+                height: 100%;
+                background-color: rgba($muted, 0.2);
+                border-radius: 50px;
+                left: 50%;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 15px;
+                width: 15px;
+                animation: bg-change 6s linear infinite;
+                border-radius: 50px;
+                left: 42%;
+                z-index: 999;
+                top: 40px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    .image-round {
+        &::before {
+            content: "";
+            position: absolute;
+            height: 500px;
+            width: 500px;
+            animation: bg-change 6s linear infinite;
+            border-radius: 100%;
+            opacity: 0.5;
+            left: 30px;
+            top: 30px;
+        }
+    }
+
+
+    .about-image {
+        position: relative;
+
+        img {
+            z-index: 999;
+        }
+    }
+}
+
+@keyframes color-change {
+
+    0%,
+    100% {
+        border-color: $primary;
+    }
+
+    25% {
+        border-color: $blue;
+    }
+
+    50% {
+        border-color: $danger;
+    }
+
+    75% {
+        border-color: $warning;
+    }
+}
+
+@keyframes bg-change {
+
+    0%,
+    100% {
+        background-color: $primary;
+    }
+
+    25% {
+        background-color: $blue;
+    }
+
+    50% {
+        background-color: $danger;
+    }
+
+    75% {
+        background-color: $warning;
+    }
+}
+
+
+
+
+@media (max-width:760px) {
+    .image-round {
+        &::before {
+            content: "";
+            height: 400px !important;
+            width: 400px !important;
+        }
+    }
+}
+
+@media (max-width:460px) {
+    .image-round {
+        &::before {
+            content: "";
+            height: 350px !important;
+            width: 350px !important;
+        }
+    }
+}
+
+@media (max-width:420px) {
+    .image-round {
+        &::before {
+            content: "";
+            height: 300px !important;
+            width: 300px !important;
+        }
+    }
+}
+
+@media (max-width:360px) {
+    .image-round {
+        &::before {
+            content: "";
+            height: 250px !important;
+            width: 250px !important;
+        }
+    }
+}
+
+
+
+
+body[data-layout-mode="dark"] {
+    .about-me{
+        background-color: $gray-dark-300 !important;
+        color: $white !important;
+        .about-box{
+            background-color: rgba($body-dark-bg-light , 0.3);
+        }
+    }
+}

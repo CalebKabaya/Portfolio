@@ -1,0 +1,34 @@
+// 
+// basic-info.scss
+// 
+
+.service{
+    background-color: $muted-light;
+    .info-item{
+        border-radius: 20px;
+        background-color: $white;
+        transition: all 0.5s ease-in-out;
+        .avatar-sm{
+            border-radius: 10px;
+        }
+
+        &:hover{
+            transform: translateY(-12px);
+        }
+    }
+
+}
+
+
+
+
+body[data-layout-mode="dark"] {
+    .service{
+        background-color: $body-dark-bg-light !important;
+        color: $white !important;
+
+        .info-item{
+            background-color: $gray-dark-300 !important;
+        }
+    }
+}

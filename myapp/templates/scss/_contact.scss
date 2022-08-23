@@ -1,0 +1,82 @@
+// 
+// contact.scss
+// 
+
+
+.contact{
+    background-color: $muted-light;
+    .contact-item{
+        .custom-form{
+            position: relative;
+            bottom: -80px;
+            box-shadow: $box-shadow;
+            padding: 40px;
+            border-radius: 20px;
+            background-color: $white;
+            animation: color-change 6s linear infinite;
+            border-left: solid 4px #ff1493;
+            .contact-form {
+               
+                margin-bottom: 15px;
+                box-shadow: none !important;
+                height: 48px;
+                padding-left: 20px;
+                border: 1px solid #efefef;
+                font-size: 15px;
+                border-radius: 0;
+                z-index: 1;
+                border: none !important;
+                border-bottom: 1px solid rgba($muted, 0.5) !important;
+    
+                &:focus,
+                &:active,
+                &.active{
+                    border-color: $primary !important;
+                }
+            }  
+            ::placeholder{
+                color: rgba($muted, 0.7) !important;
+            }
+    
+            .form-check-input:checked {
+                background-color: $primary;
+                border-color: $primary;
+            }
+    
+            .form-check-input {
+                &:focus,
+                &:active{
+                   box-shadow: none !important;
+                }  
+            }
+        
+            .form-section {
+                z-index: 1;
+                position: relative;
+                bottom: -100px;
+            }
+        }
+       
+    }
+
+}
+
+body[data-layout-mode="dark"] {
+    .contact{
+        background-color: $body-dark-bg-light !important;
+        color: $white !important;
+
+        .custom-form{
+            background-color: $gray-dark-300 !important;
+
+            .form-control {
+                background-color: $gray-dark-300 !important;
+            }
+            .form-group{
+                .form-control{
+                    background-color: $gray-dark-300 !important;
+                }
+            }
+        }
+    }
+}

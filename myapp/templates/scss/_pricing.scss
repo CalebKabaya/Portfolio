@@ -1,0 +1,127 @@
+// 
+// pricing.scss
+// 
+
+.pricing {
+    .nav-pills {
+        .nav-item {
+            margin: 0 10px;
+
+            .nav-link {
+                border-radius: 10px;
+                padding: 15px;
+
+                .nav-icon {
+                    display: none;
+                    transition: all 0.5s ease-in-out;
+                }
+
+                &.active,
+                &:active,
+                &:focus {
+                    background-color: $muted-light;
+                    transition: all 0.5s ease-in-out;
+
+                    .nav-icon {
+                        display: block;
+                    }
+                }
+
+                color: $dark;
+            }
+        }
+    }
+
+    .pricing-item {
+        margin-top: 20px;
+        transition: all 0.5s ease-in-out;
+
+        .top-bar {
+            // background-color: $muted-light;
+            border-radius: 0 30px 0 30px;
+            border: 2px solid rgba($muted, 0.2);
+            border-bottom: 2px dashed rgba($muted, 0.2);
+            transition: all 0.5s ease-in-out;
+
+            .price-tag {
+                transition: all 0.5s ease-in-out;
+            }
+        }
+
+        .bottom-bar {
+            // background-color: $muted-light;
+            border-radius: 0px 0px 0 30px;
+            border: 2px solid rgba($muted, 0.2);
+            border-top: none !important;
+
+            ul {
+                li {
+                    color: $muted;
+                }
+            }
+        }
+
+        &.active-border {
+            .top-bar {
+                animation: color-change 6s linear infinite;
+                border: 2px solid;
+                border-bottom: 2px dashed;
+            }
+
+            .bottom-bar {
+                animation: color-change 6s linear infinite;
+                border: 2px solid;
+                border-top: none !important;
+            }
+        }
+
+        &:hover {
+            transition: all 0.5s ease-in-out;
+
+            .top-bar {
+                background-color: $dark;
+                color: $white !important;
+
+                .price-tag {
+                    h2 {
+                        color: $white !important;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+
+body[data-layout-mode="dark"] {
+    .pricing {
+        background-color: $gray-dark-300 !important;
+        color: $white !important;
+
+        .nav-item {
+            button {
+                background-color: $body-dark-bg-light !important;
+                color: $white !important;
+            }
+        }
+
+        .pricing-item {
+            .price-tag {
+                h2 {
+                    color: $white !important;
+                }
+            }
+        }
+
+        .pricing-item{
+            &:hover {
+                .top-bar{
+                    background-color: $body-dark-bg-light !important;
+                }
+            }
+        }
+        
+    }
+}

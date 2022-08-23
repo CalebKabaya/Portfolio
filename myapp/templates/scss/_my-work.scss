@@ -1,0 +1,46 @@
+// 
+// my-work.scss
+// 
+
+
+.my-work{
+    background-color: $muted-light;
+
+    .work-slider{
+        .work-image{
+            img{
+                 border-radius: 50px;
+                // position: relative;
+            }
+            .image-title{
+                position: absolute;
+                top: 0;
+                color: $dark;
+                p{
+                    color: rgba($dark, 0.8);
+                }
+            }
+        }
+    }
+
+    .tns-controls{
+        bottom: 0;
+        button{
+            height: 40px;
+            width: 40px;
+            border-radius: 50px;
+            margin: 30px 10px;
+            background-color: transparent;
+            border: 2px solid $primary;
+            color: $primary;
+        }
+    }
+}
+
+
+body[data-layout-mode="dark"] {
+    .my-work{
+        background-color: $body-dark-bg-light  !important;
+        color: $white !important;
+    }
+}

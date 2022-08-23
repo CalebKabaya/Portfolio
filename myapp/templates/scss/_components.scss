@@ -1,0 +1,83 @@
+//
+// components.scss
+//
+
+.btn {
+    padding: 10px 36px;
+    font-size: 15px;
+    font-weight: $fw-semibold;
+    transition: all 0.5s ease;
+    position: relative;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  @each $name,
+  $value in $colors {
+      .bg-#{$name} {
+          background-color: #{$value} !important;
+      }
+  
+      .bg-soft-#{$name} {
+          background-color: rgba(($value), 0.2) !important;
+      }
+  
+      .text-#{$name} {
+          color: #{$value} !important;
+      }
+  
+      .border-#{$name} {
+          border-color: #{$value} !important;
+      }
+  
+      // Icons
+      .icon-dual-#{$name} {
+          color: $value;
+          fill: rgba($value, 0.2);
+      }
+  
+      .btn-#{$name} {
+          background: #{$value} !important;
+          color: $white;
+          border-color: #{$value} !important;
+          border: 1px solid;
+  
+          &:hover,
+          &:focus,
+          &:active,
+          &.active,
+          &.focus,
+          &:not(:disabled):not(.disabled):active,
+          &:not(:disabled):not(.disabled):active:focus,
+          .open>.dropdown-toggle.btn-primary {
+              background: darken($value, 4%);
+              border-color: darken($value, 4%);
+              box-shadow: none !important;
+          }
+      }
+  
+      .btn-outline-#{$name} {
+          color: #{$value};
+          border-color: #{$value};
+          border: 1px solid;
+  
+          &:hover,
+          &:focus,
+          &:active,
+          &.active,
+          &.focus,
+          &:not(:disabled):not(.disabled):active,
+          &:not(:disabled):not(.disabled):active:focus,
+          .open>.dropdown-toggle.btn-primary {
+              background: $value;
+              border-color: $value;
+              box-shadow: none !important;
+          }
+      }
+  }
+
+
+
+
+  

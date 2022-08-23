@@ -1,0 +1,25 @@
+// 
+// conter.scss
+// 
+
+.counter{
+    // background-color: $muted-light;
+
+    .counter-item{
+        padding: 20px;
+        background-color: $muted-light;
+        border-radius: 20px;
+    }
+}
+
+
+body[data-layout-mode="dark"] {
+    .counter{
+        background-color: $gray-dark-300  !important;
+        color: $white !important;
+
+        .counter-item{
+            background-color: $body-dark-bg-light !important;
+        }
+    }
+}
