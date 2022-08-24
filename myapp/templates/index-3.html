@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Harold - Landing Template</title>
+    <title>Caleb Mutuku</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content=" " />
     <meta name="keywords" content="" />
@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Telugu:ital@1&display=swap" rel="stylesheet">
 
-   
+
 
 
 </head>
@@ -166,19 +166,20 @@
                     <div class="row justify-content-center align-items-center">
                         <div class="col-lg-6">
                             <div class="home-content position-relative">
+                                {% for home in homes %}
+
                                 <div class="user-icon avatar-sm">
                                     <i class="mdi mdi-account fs-24"></i>
                                 </div>
 
-                                <h4 class="text-dark mt-4 mb-0">hi! I am April Arabin</h4>
+                                <h4 class="text-dark mt-4 mb-0">Hi! I am Caleb Mutuku</h4>
                                 <h2 class="home-title mb-0 text-primary fw-bold"><span class="text-dark">Your</span>
                                     <span class="typewrite " data-period="2000"
-                                        data-type='[ "Project mangager.","Freelance Designer." ]'>
+                                        data-type='["Full-Stack Web Developer.", "Freelance Developer.","UI/UX Designer." ]'>
                                         <span class="wrap"></span>
                                     </span>
                                 </h2>
-                                <p class="text-muted mt-3 mb-0">It is a long established fact that a reader will be
-                                    distracted by the readable content of a page when looking at its layout.</p>
+                                <p class="text-muted mt-3 mb-0">{{home.aboutme}}</p>
 
                                 <div class="my-details ">
                                     <div class="d-flex align-items-center mt-4">
@@ -186,8 +187,7 @@
                                             <i class="mdi mdi-file-outline fs-24 text-primary"></i>
                                         </div>
                                         <div class="icon-details">
-                                            <p class="fw-semibold mb-0 ms-2 text-muted fs-15">Web designer &
-                                                developer</p>
+                                            <p class="fw-semibold mb-0 ms-2 text-muted fs-15">{{home.title}}</p>
                                         </div>
                                     </div>
 
@@ -196,7 +196,7 @@
                                             <i class="mdi mdi-email-outline fs-24 text-primary"></i>
                                         </div>
                                         <div class="icon-details">
-                                            <p class="fw-semibold mb-0 ms-2 text-muted fs-15">AprileA@gmail.com</p>
+                                            <p class="fw-semibold mb-0 ms-2 text-muted fs-15">{{home.email}}</p>
                                         </div>
                                     </div>
 
@@ -205,10 +205,11 @@
                                             <i class="mdi mdi-map-marker-outline fs-24 text-primary"></i>
                                         </div>
                                         <div class="icon-details">
-                                            <p class="fw-semibold mb-0 ms-2 text-muted fs-15">London Fan</p>
+                                            <p class="fw-semibold mb-0 ms-2 text-muted fs-15">{{home.location}}</p>
                                         </div>
                                     </div>
                                 </div>
+                                {% endfor %}
                             </div>
                             <div class="bottom-box mt-4">
                                 <p class="mb-0 fw-semibold">Download my current bio:</p>
@@ -249,12 +250,11 @@
 
                     <div class="col-lg-6">
                         <div class="about-item p-5">
-                            <h2 class="display-5 fw-semibold">About Me</h2>
-                            <p class="text-muted fs-14">It is a long established fact that a reader will be distracted
-                                by the readable content of a page when looking at its layout. The point of using normal
-                                distribution of letters, as opposed to using 'Content here, content here', making it
-                                look like readable English..</p>
 
+                            <h2 class="display-5 fw-semibold">About Me</h2>
+                            {% for about in abouts%}
+                            <p class="text-muted fs-14">{{about.aboutme}}</p>
+                            {% endfor %}
                             <ul class="nav nav-pills mb-3 mt-4 pt-2" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
@@ -275,19 +275,19 @@
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                                     aria-labelledby="pills-home-tab">
-
+                                    {% for skill in skills%}
                                     <div class="skill-item mt-4 pt-2">
                                         <div class="d-flex justify-content-between">
-                                            <h6>Development</h6>
-                                            <h6>65%</h6>
+                                            <h6>{{skill.skill1}}</h6>
+                                            <h6>{{skill.percentage}}%</h6>
                                         </div>
                                         <div class="progress" style="height: 5px;">
-                                            <div class="progress-bar" role="progressbar" aria-valuenow="65"
-                                                aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="{{skill.percentage}}"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: {{skill.percentage}}%;"></div>
                                         </div>
                                     </div>
 
-                                    <div class="skill-item mt-4 pt-2">
+                                    <!-- <div class="skill-item mt-4 pt-2">
                                         <div class="d-flex justify-content-between">
                                             <h6>Design</h6>
                                             <h6>95%</h6>
@@ -296,9 +296,9 @@
                                             <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="95"
                                                 aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
-                                    <div class="skill-item mt-4 pt-2">
+                                    <!-- <div class="skill-item mt-4 pt-2">
                                         <div class="d-flex justify-content-between">
                                             <h6>Branding</h6>
                                             <h6>80%</h6>
@@ -307,12 +307,12 @@
                                             <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="80"
                                                 aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
                                         </div>
-                                    </div>
-
+                                    </div> -->
+{% endfor%}
                                 </div>
                                 <div class="tab-pane fade" id="pills-profile" role="tabpanel"
                                     aria-labelledby="pills-profile-tab">
-
+{% for experience in experiences%}
                                     <div class="experience">
                                         <div class="row position-relative">
                                             <div class="col-2">
@@ -320,20 +320,18 @@
                                             </div>
                                             <div class="col-10">
                                                 <div class="mt-4 pt-2">
-                                                    <h5>Developer</h5>
-                                                    <p class="text-muted fs-15">2000-2004 (4 year Experience)</p>
-                                                    <p class="text-muted fs-15">There are many variations of passages of
-                                                        Lorem Ipsum available, but the majority have fered altation in
-                                                        some form, by injmour, or randomised words which don't look even
-                                                        slightlievable. </p>
+                                                    <h5>{{experience.title}}</h5>
+                                                    <p class="text-muted fs-15">{{experience.duration}} ({{experience.how_many_months_or_years}} {{experience.month_or_year}} Experience)</p>
+                                                    <p class="text-muted fs-15">{{experience.description}}</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
+{% endfor%}
                                 </div>
                                 <div class="tab-pane fade" id="pills-contact" role="tabpanel"
                                     aria-labelledby="pills-contact-tab">
+                                    {% for educ in education%}
                                     <div class="experience">
                                         <div class="row position-relative">
                                             <div class="col-2">
@@ -341,14 +339,13 @@
                                             </div>
                                             <div class="col-10">
                                                 <div class="mt-4 pt-2">
-                                                    <h5>Basic Computer Application</h5>
-                                                    <p class="text-muted fs-15 mb-0">1996-1998 (3 year)</p>
-                                                    <p class="text-muted fs-15 mb-0">There are many variations of
-                                                        passages of Lorem Ipsum available.</p>
+                                                    <h5>{{educ.title}}</h5>
+                                                    <p class="text-muted fs-15 mb-0">{{educ.duration}} ({{educ.total_years}} {{educ.year_month}})</p>
+                                                    <p class="text-muted fs-15 mb-0">{{educ.description}}</p>
                                                 </div>
                                             </div>
                                         </div>
-
+<!-- 
                                         <div class="row position-relative">
                                             <div class="col-2">
                                                 <div class="border-left"></div>
@@ -362,8 +359,9 @@
                                                         slightlievable. </p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
+                                    {% endfor%}
                                 </div>
                             </div>
                         </div>
@@ -563,7 +561,7 @@
 
 
 
-   
+
     <!-- start my-work -->
     <section class="section my-work" id="work">
         <!-- start container -->
@@ -1198,7 +1196,7 @@
 
 
 
-    
+
     <!-- start blog -->
     <section class="section blog" id="blog">
         <!-- start container -->
@@ -1227,7 +1225,9 @@
                         </div>
                         <div class="blog-content mt-5">
                             <!-- <p class="text-muted fw-semibold mb-2">May 25, 2021</p> -->
-                            <a href="" ><h5>We makes UI/UX design very easy for you.</h5></a>
+                            <a href="">
+                                <h5>We makes UI/UX design very easy for you.</h5>
+                            </a>
                             <p class="fs-15 text-muted">He nicked it tickety boo harry the cras bargy chap mush spiffing
                                 spend a penny.</p>
                             <a href="" class="text-dark fw-semibold">Learn more <i
@@ -1246,7 +1246,9 @@
                         </div>
                         <div class="blog-content mt-5">
                             <!-- <p class="text-muted fw-semibold mb-2">May 25, 2021</p> -->
-                            <a href=""><h5>Current world design trends know easily.</h5></a>
+                            <a href="">
+                                <h5>Current world design trends know easily.</h5>
+                            </a>
                             <p class="fs-15 text-muted">He nicked it tickety boo harry the cras bargy chap mush spiffing
                                 spend a penny.</p>
                             <a href="" class="text-dark fw-semibold">Learn more <i
@@ -1265,7 +1267,9 @@
                         </div>
                         <div class="blog-content mt-5">
                             <!-- <p class="text-muted fw-semibold mb-2">May 25, 2021</p> -->
-                            <a href=""><h5>We calculate clients demand for research.</h5></a>
+                            <a href="">
+                                <h5>We calculate clients demand for research.</h5>
+                            </a>
                             <p class="fs-15 text-muted">He nicked it tickety boo harry the cras bargy chap mush spiffing
                                 spend a penny.</p>
                             <a href="" class="text-dark fw-semibold">Learn more <i
@@ -1281,8 +1285,8 @@
 
 
 
-     <!-- start contact -->
-     <section class="contact pt-5 pb-0" id="contact">
+    <!-- start contact -->
+    <section class="contact pt-5 pb-0" id="contact">
         <!-- start container -->
         <div class="container">
 
@@ -1528,16 +1532,16 @@
     <!-- end footer -->
 
 
- <!--Bootstrap Js-->
- <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
- <!-- Slider Js -->
- <script src="{% static 'js/tiny-slider.js' %}"></script>
- <!-- <script src="js/tiny-slider.js"></script> -->
- <script src="{% static 'js/swiper.min.js' %}"></script>
- <!-- conter -->
- <script src="{% static 'js/counter.init.js' %}"></script>
- <!-- App Js -->
- <script src="{% static 'js/app.js' %}"></script>
+    <!--Bootstrap Js-->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Slider Js -->
+    <script src="{% static 'js/tiny-slider.js' %}"></script>
+    <!-- <script src="js/tiny-slider.js"></script> -->
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <!-- conter -->
+    <script src="{% static 'js/counter.init.js' %}"></script>
+    <!-- App Js -->
+    <script src="{% static 'js/app.js' %}"></script>
 
 </body>
 
