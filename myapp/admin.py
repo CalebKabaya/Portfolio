@@ -6,6 +6,10 @@ admin.site.register(About)
 admin.site.register(Skills)
 admin.site.register(Education)
 admin.site.register(Experience)
+admin.site.register(Services)
+admin.site.register(Projects)
+admin.site.register(AllSkills)
+
 
 
 

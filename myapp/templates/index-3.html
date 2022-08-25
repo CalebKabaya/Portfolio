@@ -27,6 +27,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Telugu:ital@1&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet" />
 
 
 
@@ -282,8 +290,9 @@
                                             <h6>{{skill.percentage}}%</h6>
                                         </div>
                                         <div class="progress" style="height: 5px;">
-                                            <div class="progress-bar" role="progressbar" aria-valuenow="{{skill.percentage}}"
-                                                aria-valuemin="0" aria-valuemax="100" style="width: {{skill.percentage}}%;"></div>
+                                            <div class="progress-bar" role="progressbar"
+                                                aria-valuenow="{{skill.percentage}}" aria-valuemin="0"
+                                                aria-valuemax="100" style="width: {{skill.percentage}}%;"></div>
                                         </div>
                                     </div>
 
@@ -308,11 +317,11 @@
                                                 aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
                                         </div>
                                     </div> -->
-{% endfor%}
+                                    {% endfor%}
                                 </div>
                                 <div class="tab-pane fade" id="pills-profile" role="tabpanel"
                                     aria-labelledby="pills-profile-tab">
-{% for experience in experiences%}
+                                    {% for experience in experiences%}
                                     <div class="experience">
                                         <div class="row position-relative">
                                             <div class="col-2">
@@ -321,13 +330,15 @@
                                             <div class="col-10">
                                                 <div class="mt-4 pt-2">
                                                     <h5>{{experience.title}}</h5>
-                                                    <p class="text-muted fs-15">{{experience.duration}} ({{experience.how_many_months_or_years}} {{experience.month_or_year}} Experience)</p>
+                                                    <p class="text-muted fs-15">{{experience.duration}}
+                                                        ({{experience.how_many_months_or_years}}
+                                                        {{experience.month_or_year}} Experience)</p>
                                                     <p class="text-muted fs-15">{{experience.description}}</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-{% endfor%}
+                                    {% endfor%}
                                 </div>
                                 <div class="tab-pane fade" id="pills-contact" role="tabpanel"
                                     aria-labelledby="pills-contact-tab">
@@ -340,12 +351,13 @@
                                             <div class="col-10">
                                                 <div class="mt-4 pt-2">
                                                     <h5>{{educ.title}}</h5>
-                                                    <p class="text-muted fs-15 mb-0">{{educ.duration}} ({{educ.total_years}} {{educ.year_month}})</p>
+                                                    <p class="text-muted fs-15 mb-0">{{educ.duration}}
+                                                        ({{educ.total_years}} {{educ.year_month}})</p>
                                                     <p class="text-muted fs-15 mb-0">{{educ.description}}</p>
                                                 </div>
                                             </div>
                                         </div>
-<!-- 
+                                        <!-- 
                                         <div class="row position-relative">
                                             <div class="col-2">
                                                 <div class="border-left"></div>
@@ -383,7 +395,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="text-center mb-5">
-                        <h6 class="mb-0 text-muted fs-15">WHAT WE OFFER</h6>
+                        <h6 class="mb-0 text-muted fs-15">WHAT i OFFER</h6>
                         <h2>Affordable Services</h2>
                         <p class="para-width text-muted mb-0 fs-15">A Private Limited is the most popular type of
                             partnership Malta. The limited liability is, in fact, the only type of company allowed by
@@ -392,83 +404,40 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for service in services %}
+
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+                    <div class="card-body">
+                      <h5 class="card-title">{{service.service_title}}</h5>
+                      <p class="card-text">
+                        {{service.service_description}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+                </div>
+            <!-- <div class="row">
                 <div class="col-lg-4">
                     <div class="info-item box-shadow mt-4 pt-2">
                         <div class="p-4">
                             <div class="research avatar-sm bg-soft-purple text-center">
-                                <i class="mdi mdi-cached fs-24 text-purple"></i>
-                            </div>
-                            <h6 class="mt-4">Research & Analysis</h6>
-                            <p class="text-muted fs-15">We use a customized application specifically designed a testing
-                                gnose to keep away for people.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="info-item box-shadow mt-4 pt-2">
-                        <div class="p-4">
-                            <div class="research avatar-sm bg-soft-danger text-center">
-                                <i class="mdi mdi-comment-plus-outline fs-24 text-danger"></i>
-                            </div>
-                            <h6 class="mt-4">Web Development</h6>
-                            <p class="text-muted fs-15">We use a customized application specifically designed a testing
-                                gnose to keep away for people.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="info-item box-shadow mt-4 pt-2">
-                        <div class="p-4">
-                            <div class="research avatar-sm bg-soft-warning text-center">
-                                <i class="mdi mdi-layers fs-24 text-warning"></i>
-                            </div>
-                            <h6 class="mt-4">Network Management</h6>
-                            <p class="text-muted fs-15 ">We use a customized application specifically designed a testing
-                                gnose to keep away for people.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                <iconify-icon icon="carbon:development"></iconify-icon>
 
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="info-item box-shadow mt-4 pt-2">
-                        <div class="p-4">
-                            <div class="research avatar-sm bg-soft-blue text-center">
-                                <i class="mdi mdi-inbox-arrow-up fs-24 text-blue"></i>
+
                             </div>
-                            <h6 class="mt-4">UI/UX Development</h6>
-                            <p class="text-muted fs-15">We use a customized application specifically designed a testing
-                                gnose to keep away for people.</p>
+                            <h6 class="mt-4">{{service.service_title}}</h6>
+                            <p class="text-muted fs-15">{{service.service_description}}</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="info-item box-shadow mt-4 pt-2">
-                        <div class="p-4">
-                            <div class="research avatar-sm bg-soft-primary text-center">
-                                <i class="mdi mdi-chart-line fs-24 text-primary"></i>
-                            </div>
-                            <h6 class="mt-4">Mobile App Development</h6>
-                            <p class="text-muted fs-15">We use a customized application specifically designed a testing
-                                gnose to keep away for people.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="info-item box-shadow mt-4 pt-2">
-                        <div class="p-4">
-                            <div class="research avatar-sm bg-soft-pink text-center">
-                                <i class="mdi mdi-email-open fs-24 text-pink"></i>
-                            </div>
-                            <h6 class="mt-4">Network Management</h6>
-                            <p class="text-muted fs-15">We use a customized application specifically designed a testing
-                                gnose to keep away for people.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </div> -->
+             
+               
+            <!-- </div> -->
 
         </div>
         <!-- end container -->
@@ -485,7 +454,7 @@
                 <div class="col-lg-6">
                     <div class="text-center mb-4">
                         <h6 class="mb-0 text-muted fs-15">Counter</h6>
-                        <h2>Our Achievement</h2>
+                        <h2>My Skills </h2>
                         <p class="para-width text-muted mb-0 fs-15">A Private Limited is the most popular type of
                             partnership Malta. The limited liability is, in fact, the only type of company allowed by
                             Companies.</p>
@@ -493,69 +462,27 @@
                 </div>
             </div>
             <!-- end row -->
-
             <div class="row">
-                <div class="col-lg-3 col-md-6 mt-4 pt-2">
-                    <div class="counter-item">
-                        <div class="counter-icon text-center">
-                            <img src="images/counter/heart.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="counter-velue text-center mt-3">
-                            <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="800">0</h2><span
-                                class="h2 fw-bold">K</span><span class="h2"> +</span>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-muted fw-semibold fs-15">Happy Clients</p>
+                {% for skill in allskills %}
+                <div class="col-lg-4">
+                    <div class="info-item box-shadow mt-4 pt-2">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between">
+                                <h6>{{skill.skill1}}</h6>
+                                <h6>{{skill.percentage}}%</h6>
+                            </div>
+                            <div class="progress" style="height: 5px; color: #2FB4AE;">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{skill.percentage}}" aria-valuemin="0"
+                                    aria-valuemax="100" style="width: {{skill.percentage}}%;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
 
-                <div class="col-lg-3 col-md-6 mt-4 pt-2">
-                    <div class="counter-item">
-                        <div class="counter-icon text-center">
-                            <img src="images/counter/blueprint.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="counter-velue text-center mt-3">
-                            <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="400">0</h2>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-muted fw-semibold fs-15">Project Done</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 mt-4 pt-2">
-                    <div class="counter-item">
-                        <div class="counter-icon text-center">
-                            <img src="images/counter/star.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="counter-velue text-center mt-3">
-                            <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="1000">0</h2><span
-                                class="h2 fw-bold">K</span><span class="h2"> +</span>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-muted fw-semibold fs-15">Clients Review</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 mt-4 pt-2">
-                    <div class="counter-item">
-                        <div class="counter-icon text-center">
-                            <img src="images/counter/idea.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="counter-velue text-center mt-3">
-                            <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="20">0</h2><span
-                                class="h2"> +</span>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-muted fw-semibold fs-15">Year Experience</p>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <!-- end container -->
+
+          
     </section>
     <!-- end counter -->
 
@@ -574,65 +501,37 @@
                     </div>
                     <div class="right-text ms-auto">
                         <a href="" class="text-primary border-2 border-primary border-bottom">More Work <img
-                                src="images/home/right-arrow-primary.png" alt="" class="img-fluid mb-1 ms-2"></a>
+                                src="{{'static/images/home/right-arrow-primary.png'}}" alt=""
+                                class="img-fluid mb-1 ms-2"></a>
+                        <!-- <img src="{{'static/images/counter/idea.png'}}" alt="" class="img-fluid"> -->
+
                     </div>
                 </div>
             </div>
             <!-- end row -->
 
             <div class="row">
+
                 <div class="col-lg-12">
                     <div class="work-slider" id="work-slider">
-                        <div class="item">
-                            <div class="work-image position-relative">
-                                <a href="">
-                                    <img src="images/work/img-1.png" alt="" class="img-fluid">
-                                    <div class="image-title mt-5 ms-5">
-                                        <h4 class="mb-0">Web Design</h4>
-                                        <p>E-Commerce</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        {% for project in projects%}
 
-                        <!-- slider item -->
-                        <div class="item">
-                            <div class="work-image">
-                                <a href="">
-                                    <img src="images/work/img-2.png" alt="" class="img-fluid">
-                                    <div class="image-title mt-5 ms-5">
-                                        <h4 class="mb-0">NFT Web Design</h4>
-                                        <p>NFT Maerketplace</p>
-                                    </div>
+                        <div class="card">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img src="{{project.image.url}}" class="img-fluid" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </a>
                             </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{project.title}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="#!" class="btn btn-primary">View</a>
+                            </div>
                         </div>
+                        {% endfor %}
 
-                        <!-- slider item -->
-                        <div class="item">
-                            <div class="work-image">
-                                <a href="">
-                                    <img src="images/work/img-3.png" alt="" class="img-fluid">
-                                    <div class="image-title mt-5 ms-5 text-white">
-                                        <h4 class="mb-0">App Design</h4>
-                                        <p class="text-white-50">Mobile App </p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- slider item -->
-                        <div class="item">
-                            <div class="work-image">
-                                <a href="">
-                                    <img src="images/work/img-4.png" alt="" class="img-fluid">
-                                    <div class="image-title mt-5 ms-5 text-white">
-                                        <h4 class="mb-0">Web Design</h4>
-                                        <p class="text-white-50">E-Commerce</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
 
                     </div>
 
@@ -644,414 +543,100 @@
     <!-- end my-work -->
 
 
-    <!-- start pricing -->
-    <section class="section pricing" id="pricing">
-
+    <!-- start counter -->
+    <section class="section counter" id="counter">
         <!-- start container -->
         <div class="container">
-
-            <div class="shape-1">
-                <img src="images/testi/shape.png" alt="" class="img-fluid">
-            </div>
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="text-center mb-4">
-                        <h6 class="mb-0 text-muted fs-15">Pricing</h6>
-                        <h2>Choose your Plan</h2>
+                        <h6 class="mb-0 text-muted fs-15">Counter</h6>
+                        <h2>My Achievement</h2>
                         <p class="para-width text-muted mb-0 fs-15">A Private Limited is the most popular type of
                             partnership Malta. The limited liability is, in fact, the only type of company allowed by
                             Companies.</p>
                     </div>
                 </div>
             </div>
+            <!-- end row -->
 
             <div class="row">
-                <div class="col-lg-12">
-                    <ul class="nav nav-pills mb-3 justify-content-center align-items-end mt-4 pt-2" id="pills-tab1"
-                        role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="pills-basic-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-basic" type="button" role="tab" aria-controls="pills-basic"
-                                aria-selected="true">
-                                <span class="nav-icon">
-                                    <i class="mdi mdi-account fs-24"></i>
-                                </span>
-                                <span class="fs-16 mb-0 fw-bold d-block">Individual</span>
-                                <span class="fs-14 text-muted mb-0">For Monthly Project</span>
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-professional-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-professional" type="button" role="tab"
-                                aria-controls="pills-professional" aria-selected="false">
-                                <span class="nav-icon">
-                                    <i class="mdi mdi-wallet-travel fs-24"></i>
-                                </span>
-                                <span class="fs-16 mb-0 fw-bold d-block">Professional</span>
-                                <span class="fs-14 text-muted mb-0">For Yearly Project</span>
-                            </button>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="pills-tabContent1">
-                        <div class="tab-pane fade show active" id="pills-basic" role="tabpanel"
-                            aria-labelledby="pills-basic-tab">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="pricing-item ">
-                                        <div class="top-bar p-4 pb-3">
-                                            <div class="d-flex align-items-center">
-                                                <div class="price-icon text-primary">
-                                                    <i class="mdi mdi-airballoon fs-32"></i>
-                                                </div>
-                                                <div class="price-title ms-3">
-                                                    <h6 class="mb-0">Basic Plan</h6>
-                                                </div>
-                                            </div>
+                <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                    <div class="counter-item">
+                        <div class="counter-icon text-center">
+                            <img src="{{'static/images/counter/heart.png'}}" alt="" class="img-fluid">
 
-                                            <div class="price-tag">
-                                                <h2 class="text-dark mb-0 fs-40"><sup
-                                                        class="fs-22 fw-semibold">$</sup>09<sup
-                                                        class="fs-16 fw-semibold"> /month</sup></h2>
-                                            </div>
-                                        </div>
-                                        <div class="bottom-bar p-4 pt-3">
-                                            <ul class="list-unstyled ">
-                                                <li><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>2
-                                                    App and
-                                                    project</li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>400
-                                                    Gb/s
-                                                    storange</li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Free
-                                                    coustom domain
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Chat
-                                                    Support
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>No
-                                                    transaction fees
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Unlimited
-                                                    Storage
-                                                </li>
-
-                                            </ul>
-
-                                            <div class="pricing-button">
-                                                <a href="" class="btn btn-primary w-100 mt-3 box-shadow"><i
-                                                        class="mdi mdi-check-all me-2"></i>Choose
-                                                    plane</a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4">
-                                    <div class="pricing-item active-border">
-                                        <div class="top-bar p-4 pb-3">
-                                            <div class="d-flex align-items-center">
-                                                <div class="price-icon text-primary">
-                                                    <i class="mdi mdi-airplane fs-32"></i>
-                                                </div>
-                                                <div class="price-title ms-3">
-                                                    <h6 class="mb-0">Startup Plan</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="price-tag">
-                                                <h2 class="text-dark mb-0 fs-40"><sup
-                                                        class="fs-22 fw-semibold">$</sup>49<sup
-                                                        class="fs-16 fw-semibold"> /month</sup></h2>
-                                            </div>
-                                        </div>
-                                        <div class="bottom-bar p-4 pt-3">
-                                            <ul class="list-unstyled ">
-                                                <li><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>2
-                                                    App and
-                                                    project</li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>400
-                                                    Gb/s
-                                                    storange</li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Free
-                                                    coustom domain
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Chat
-                                                    Support
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>No
-                                                    transaction fees
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Unlimited
-                                                    Storage
-                                                </li>
-                                            </ul>
-
-                                            <div class="pricing-button">
-                                                <a href="" class="btn btn-dark w-100 mt-3 text-white"><i
-                                                        class="mdi mdi-check-all me-2"></i>Choose
-                                                    plane</a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4">
-                                    <div class="pricing-item ">
-                                        <div class="top-bar p-4 pb-3">
-                                            <div class="d-flex align-items-center">
-                                                <div class="price-icon text-primary">
-                                                    <i class="mdi mdi-rocket fs-32"></i>
-                                                </div>
-                                                <div class="price-title ms-3">
-                                                    <h6 class="mb-0">Enterprise Plan</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="price-tag">
-                                                <h2 class="text-dark mb-0 fs-40"><sup
-                                                        class="fs-22 fw-semibold">$</sup>99<sup
-                                                        class="fs-16 fw-semibold"> /month</sup></h2>
-                                            </div>
-                                        </div>
-                                        <div class="bottom-bar p-4 pt-3">
-                                            <ul class="list-unstyled ">
-                                                <li><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>2
-                                                    App and
-                                                    project</li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>400
-                                                    Gb/s
-                                                    storange</li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Free
-                                                    coustom domain
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Chat
-                                                    Support
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>No
-                                                    transaction fees
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Unlimited
-                                                    Storage
-                                                </li>
-
-                                            </ul>
-
-                                            <div class="pricing-button">
-                                                <a href="" class="btn btn-primary w-100 mt-3 box-shadow"><i
-                                                        class="mdi mdi-check-all me-2"></i>Choose
-                                                    plane</a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="tab-pane fade" id="pills-professional" role="tabpanel"
-                            aria-labelledby="pills-professional-tab">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="pricing-item  active-border">
-                                        <div class="top-bar p-4 pb-3">
-                                            <div class="d-flex align-items-center">
-                                                <div class="price-icon text-primary">
-                                                    <i class="mdi mdi-airballoon fs-32"></i>
-                                                </div>
-                                                <div class="price-title ms-3">
-                                                    <h6 class="mb-0">Basic Plan</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="price-tag">
-                                                <h2 class="text-dark mb-0 fs-40"><sup
-                                                        class="fs-22 fw-semibold">$</sup>199<sup
-                                                        class="fs-16 fw-semibold"> /Year</sup></h2>
-                                            </div>
-                                        </div>
-                                        <div class="bottom-bar p-4 pt-3">
-                                            <ul class="list-unstyled ">
-                                                <li><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>2
-                                                    App and
-                                                    project</li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>400
-                                                    Gb/s
-                                                    storange</li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Free
-                                                    coustom domain
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Chat
-                                                    Support
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>No
-                                                    transaction fees
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Unlimited
-                                                    Storage
-                                                </li>
-
-                                            </ul>
-
-                                            <div class="pricing-button">
-                                                <a href="" class="btn btn-dark w-100 mt-3 box-shadow text-white"><i
-                                                        class="mdi mdi-check-all me-2"></i>Choose
-                                                    plane</a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4">
-                                    <div class="pricing-item">
-                                        <div class="top-bar p-4 pb-3">
-                                            <div class="d-flex align-items-center">
-                                                <div class="price-icon text-primary">
-                                                    <i class="mdi mdi-airplane fs-32"></i>
-                                                </div>
-                                                <div class="price-title ms-3">
-                                                    <h6 class="mb-0">Basic Plan</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="price-tag">
-                                                <h2 class="text-dark mb-0 fs-40"><sup
-                                                        class="fs-22 fw-semibold">$</sup>249<sup
-                                                        class="fs-16 fw-semibold"> /year</sup></h2>
-                                            </div>
-                                        </div>
-                                        <div class="bottom-bar p-4 pt-3">
-                                            <ul class="list-unstyled ">
-                                                <li><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>2
-                                                    App and
-                                                    project</li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>400
-                                                    Gb/s
-                                                    storange</li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Free
-                                                    coustom domain
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Chat
-                                                    Support
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>No
-                                                    transaction fees
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Unlimited
-                                                    Storage
-                                                </li>
-                                            </ul>
-
-                                            <div class="pricing-button">
-                                                <a href="" class="btn btn-primary w-100 mt-3"><i
-                                                        class="mdi mdi-check-all me-2"></i>Choose
-                                                    plane</a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4">
-                                    <div class="pricing-item ">
-                                        <div class="top-bar p-4 pb-3">
-                                            <div class="d-flex align-items-center">
-                                                <div class="price-icon text-primary">
-                                                    <i class="mdi mdi-rocket fs-32"></i>
-                                                </div>
-                                                <div class="price-title ms-3">
-                                                    <h6 class="mb-0">Basic Plan</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="price-tag">
-                                                <h2 class="text-dark mb-0 fs-40"><sup
-                                                        class="fs-22 fw-semibold">$</sup>299<sup
-                                                        class="fs-16 fw-semibold"> /year</sup></h2>
-                                            </div>
-                                        </div>
-                                        <div class="bottom-bar p-4 pt-3">
-                                            <ul class="list-unstyled ">
-                                                <li><i class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>2
-                                                    App and
-                                                    project</li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>400
-                                                    Gb/s
-                                                    storange</li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Free
-                                                    coustom domain
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Chat
-                                                    Support
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>No
-                                                    transaction fees
-                                                </li>
-                                                <li class="mt-2"><i
-                                                        class="mdi mdi-check fs-20 align-middle me-2 text-primary"></i>Unlimited
-                                                    Storage
-                                                </li>
-
-                                            </ul>
-
-                                            <div class="pricing-button">
-                                                <a href="" class="btn btn-primary w-100 mt-3 box-shadow"><i
-                                                        class="mdi mdi-check-all me-2"></i>Choose
-                                                    plane</a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="counter-velue text-center mt-3">
+                            <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="4">4</h2><span
+                                class="h2 fw-bold"></span><span class="h2"> +</span>
                         </div>
+                        <div class="text-center">
+                            <p class="text-muted fw-semibold fs-15">Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                    <div class="counter-item">
+                        <div class="counter-icon text-center">
+                            <img src="{{'static/images/counter/blueprint.png'}}" alt="" class="img-fluid">
+
+                        </div>
+                        <div class="counter-velue text-center mt-3">
+                            <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="50">0</h2>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-muted fw-semibold fs-15">Project Done</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                    <div class="counter-item">
+                        <div class="counter-icon text-center">
+                            <img src="{{'static/images/counter/star.png'}}" alt="" class="img-fluid">
+
+                        </div>
+                        <div class="counter-velue text-center mt-3">
+                            <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="4">4</h2><span
+                                class="h2 fw-bold"></span><span class="h2"> +</span>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-muted fw-semibold fs-15">Clients Review</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                    <div class="counter-item">
+                        <div class="counter-icon text-center">
+                            <img src="{{'static/images/counter/idea.png'}}" alt="" class="img-fluid">
+
+                        </div>
+                        <div class="counter-velue text-center mt-3">
+                            <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="1">1</h2><span
+                                class="h2"> +</span>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-muted fw-semibold fs-15">Year Experience</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- end row -->
         </div>
         <!-- end container -->
-
-        <div class="shape-2">
-            <img src="images/testi/shape-2.png" alt="" class="img-fluid">
-        </div>
-
-        <div class="shape-3 ">
-            <img src="images/testi/shape-3.png" alt="" class="img-fluid">
-        </div>
-
     </section>
+    <!-- end counter -->
+
+    <!-- start pricing -->
+    <!-- <section class="section pricing" id="pricing">
+
+        
+
+        
+
+    </section> -->
     <!-- end pricing -->
 
 
@@ -1542,6 +1127,7 @@
     <script src="{% static 'js/counter.init.js' %}"></script>
     <!-- App Js -->
     <script src="{% static 'js/app.js' %}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"></script>
 
 </body>
 

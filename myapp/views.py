@@ -8,13 +8,20 @@ def welcome(request):
     skills=Skills.objects.all()
     education=Education.objects.all()
     experiences=Experience.objects.all()
+    services=Services.objects.all()
+    projects=Projects.objects.all()
+    allskills=AllSkills.objects.all()
 
     context= {
         'homes':homes,
         'abouts':abouts,
         'skills':skills,
         'education':education,
-        'experiences':experiences
+        'experiences':experiences,
+        'services':services,
+        'projects':projects,
+        'allskills':allskills,
+
 
     }
 

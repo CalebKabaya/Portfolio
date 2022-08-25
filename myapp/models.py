@@ -1,4 +1,4 @@
-from calendar import month
+
 from django.db import models
 from cloudinary.models import CloudinaryField
 
@@ -64,6 +64,25 @@ class Skills(models.Model):
     def all_posts(cls):
         return cls.objects.all()
 
+class AllSkills(models.Model):
+    skill1=models.CharField(max_length=300, blank=True)
+    percentage=models.CharField(max_length=100, blank=True)
+
+  
+
+    def __str__(self):
+        return f'{self.skill1}'
+
+    def save_post(self):
+        self.save()
+
+    def delete_post(self):
+        self.delete()
+
+    @classmethod
+    def all_posts(cls):
+        return cls.objects.all()        
+
 class Experience(models.Model):
     time=(
         ('months', 'months'),
@@ -110,9 +129,9 @@ class Education(models.Model):
         return cls.objects.all()
 
 class Services(models.Model):
-    service_title=models.TextField(max_length=300, blank=True)
+    service_title=models.CharField(max_length=300, blank=True)
     service_description=models.TextField(max_length=300, blank=True)
-    logo=CloudinaryField('image',blank=True)
+    logo=models.CharField(blank=True,max_length=200)
 
 
     def __str__(self):
@@ -128,6 +147,29 @@ class Services(models.Model):
     def all_posts(cls):
         return cls.objects.all()
 
+
+class Projects(models.Model):
+    image=CloudinaryField('image', blank=True)
+    title=models.CharField(max_length=50, blank=True)
+    description=models.TextField(max_length=500, blank=True)
+    user_story=models.TextField(max_length=500, blank=True)
+    technologies=models.CharField(max_length=40, blank=True)
+    link=models.URLField(blank=True)
+
+
+    def __str__(self):
+        return f'{self.title}'
+
+    def save_post(self):
+        self.save()
+
+    def delete_post(self):
+        self.delete()
+
+    @classmethod
+    def all_posts(cls):
+        return cls.objects.all()  
+         
 class Testimonials(models.Model):
     image=CloudinaryField('image')
     testimonial=models.TextField(max_length=500, blank=True)
