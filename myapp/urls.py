@@ -9,6 +9,7 @@ from . import views
 urlpatterns=[
     
     re_path('^$',views.welcome,name = 'index'),
+    re_path('projects',views.allprojects,name='projects')
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
