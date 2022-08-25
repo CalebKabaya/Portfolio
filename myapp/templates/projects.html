@@ -1,0 +1,493 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Caleb Mutuku</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" " />
+    <meta name="keywords" content="" />
+    <meta content="Themesdesign" name="author" />
+    <link rel="shortcut icon" href="{{'static/images/favicon.ico'}}">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" id="bootstrap-style">
+    <!-- Material Icon Css -->
+    <link rel="stylesheet" href="{% static 'css/materialdesignicons.min.css' %}" type="text/css">
+    <!-- Unicon Css -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="{% static 'css/tiny-slider.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/tiny-slider.css.map' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}" type="text/css">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}" type="text/css">
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Telugu:ital@1&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="71">
+
+    <!-- light-dark mode button -->
+    <a href="javascript: void(0);" id="mode" class="mode-btn text-white rounded-end">
+        <i class="uil uil-brightness mode-dark mx-auto"></i>
+        <i class="uil uil-moon bx-spin mode-light"></i>
+    </a>
+
+
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
+        <div class="container-fluid custom-container">
+            <a class="navbar-brand logo text-uppercase" href="index.html">
+                <img src="images/logo-light.png" class="logo-light" alt="" height="34">
+                <img src="images/logo-dark.png" class="logo-dark" alt="" height="34">
+            </a>
+
+            <button class="navbar-toggler me-3 order-2 ms-4" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-label="Toggle navigation">
+                <i class="mdi mdi-menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto navbar-center">
+                    <li class="nav-item active">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-hover">
+                        <a href="#aboutme" class="nav-link ">About Me</a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-hover">
+                        <a href="#service" class="nav-link ">Service</a>
+                    </li>
+
+                    <li class="nav-item dropdown dropdown-hover">
+                        <a href="#work" class="nav-link ">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#pricing" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#testi" class="nav-link">Testimonial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#blog" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <!--end navbar-nav-->
+                <div class="ms-auto ps-2 ps-lg-0">
+                    <a href="" class="btn btn-dark rounded-pill my-3 my-lg-0" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Login</a>
+                </div>
+            </div>
+        </div>
+        <!--end container-->
+    </nav>
+    <!-- Navbar End -->
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form class="row g-3 needs-validation">
+                        <div class="col-md-6">
+                            <label for="validationCustom01" class="form-label">First name <span
+                                    class="text-primary">*</span></label>
+                            <input type="text" class="form-control" id="validationCustom01" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom02" class="form-label">Email <span
+                                    class="text-primary">*</span></label>
+                            <input type="email" class="form-control" id="validationCustom02" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom03" class="form-label">Subject <span
+                                    class="text-primary">*</span></label>
+                            <input type="text" class="form-control" id="validationCustom03" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom05" class="form-label">Password <span
+                                    class="text-primary">*</span></label>
+                            <input type="password" class="form-control" id="validationCustom05" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid zip.
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <label for="validationTextarea" class="form-label">Textarea<span
+                                    class="text-primary">*</span></label>
+                            <textarea class="form-control" id="validationTextarea" required></textarea>
+                            <div class="invalid-feedback">
+                                You must agree before submitting.
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end modal -->
+
+
+
+
+    <!-- start counter -->
+    <section class="section counter" id="counter">
+        <!-- start container -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center mb-4">
+                        <h6 class="mb-0 text-muted fs-15">Counter</h6>
+                        <h2>My Skills </h2>
+                        <p class="para-width text-muted mb-0 fs-15">A Private Limited is the most popular type of
+                            partnership Malta. The limited liability is, in fact, the only type of company allowed by
+                            Companies.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+          
+            <!-- <div class="row row-cols-1 row-cols-md-3 g-4"> -] -->
+                <!-- {% for project in projects %}
+
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="{{project.image.url}}" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+                    <div class="card-body">
+                      <h5 class="card-title">{{project.title}}</h5>
+                      <p class="card-text">
+                        {{project.description}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+                </div>  -->
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    {%for project in projects %}
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="{{project.image.url}}" class="card-img-top" alt="Skyscrapers"/>
+                        <div class="card-body">
+                          <h5 class="card-title">{{project.title}}</h5>
+                          <p class="card-text">
+                           {{project.description|slice:":120"}}
+                          </p>
+                        </div>
+                        <div class="card-footer">
+                          <small class="text-muted">Read more!!</small>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+</div>
+          
+    </section>
+    <!-- end counter -->
+
+
+
+
+
+
+    <!-- start contact -->
+    <section class="contact pt-5 pb-0" id="contact">
+        <!-- start container -->
+        <div class="container">
+
+            <div class="shape-1">
+                <img src="images/testi/shape.png" alt="" class="img-fluid">
+            </div>
+
+            <div class="contact-item">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="contact-info">
+                            <div class="mb-4">
+                                <h3>Let's Connect</h3>
+                                <p class="text-muted mb-0">Looking for help? Fill the form and start a new adventure.
+                                </p>
+                            </div>
+
+                            <hr>
+
+                            <div class="info-content mt-4">
+                                <h6>Address :</h6>
+                                <div class="d-flex">
+                                    <div class="icon">
+                                        <i class="mdi mdi-home-outline fs-24 text-primary"></i>
+                                    </div>
+                                    <div class="icon-content ms-3">
+                                        <p class="mb-0 fs-15">744 New York Ave, Brooklyn, Kings,<br>
+                                            New York 10224</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info-content mt-4 pt-2">
+                                <h6>Phone :</h6>
+                                <div class="d-flex">
+                                    <div class="icon">
+                                        <i class="mdi mdi-phone-outline fs-24 text-primary"></i>
+                                    </div>
+                                    <div class="icon-content ms-3">
+                                        <p class="mb-0 fs-15">(+642) 245 356 432</p>
+                                        <p class="mb-0 fs-15">(+420) 336 476 328</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="info-content mt-4 pt-2">
+                                <h6>Support :</h6>
+                                <div class="d-flex">
+                                    <div class="icon">
+                                        <i class="mdi mdi-email-outline fs-24 text-primary"></i>
+                                    </div>
+                                    <div class="icon-content ms-3">
+                                        <p class="mb-0 fs-15">hellosuppot@gmail.com</p>
+                                        <p class="mb-0 fs-15">help@.com</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-7 ">
+                        <div class="custom-form mt-4 ">
+                            <form method="post" name="myForm" onsubmit="return validateForm()">
+
+                                <h6 class="mb-0 text-muted">Let's talk</h6>
+                                <h3>Enter your project details</h3>
+                                <p class=" fs-15 text-muted">Content here, content here', making it look like
+                                    readable English. Many desktop publishing packages.</p>
+                                <p id="error-msg" style="opacity: 1;">
+                                    <!-- <div class="alert alert-warning">*Please enter a Name*</div> -->
+                                </p>
+
+
+                                <div id="simple-msg"></div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input name="name" id="name" type="text" class="form-control contact-form"
+                                                placeholder="Your name">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input name="email" id="email" type="email"
+                                                class="form-control contact-form" placeholder="Your email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group mt-2">
+                                            <input type="text" class="form-control contact-form" id="subject"
+                                                placeholder="Your Subject..">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group mt-2">
+                                            <textarea name="comments" id="comments" rows="4"
+                                                class="form-control contact-form h-auto"
+                                                placeholder="Your message..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row my-2">
+                                    <div class="col-lg-12 d-grid">
+                                        <input type="submit" id="submit" name="send"
+                                            class="submitBnt btn btn-rounded btn-primary" value="Send Message">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shape-2">
+                <img src="images/testi/shape-2.png" alt="" class="img-fluid">
+            </div>
+
+            <div class="shape-3 ">
+                <img src="images/testi/shape-3.png" alt="" class="img-fluid">
+            </div>
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end contact -->
+
+
+
+    <!-- start footer -->
+    <section class=" footer">
+        <!-- start container -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="mt-5">
+                        <a class=" logo text-uppercase" href="index.html">
+                            <img src="images/logo-light.png" class="logo-light" alt="" height="32">
+                            <!-- <img src="images/logo-light.png" class="logo-dark" alt="" height="28"> -->
+                        </a>
+                        <p class="fs-15 text-white-50 mt-4">A Private Limited is the most popular type of partnership
+                            Malta.
+                            The limited liability is, in fact, the only type of company allowed by Companies.</p>
+
+                        <div class="icon-item mt-4">
+                            <div class="d-flex">
+                                <a href="#">
+                                    <div class="social-icon facebook avatar-xs">
+                                        <i class="mdi mdi-facebook "></i>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="social-icon instagram avatar-xs">
+                                        <i class="mdi mdi-instagram "></i>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="social-icon twitter avatar-xs">
+                                        <i class="mdi mdi-twitter"></i>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="social-icon linkedin avatar-xs">
+                                        <i class="mdi mdi-linkedin"></i>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="social-icon pinterest avatar-xs">
+                                        <i class="mdi mdi-pinterest"></i>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-2 mt-4">
+                    <h5 class="text-white">Company</h5>
+
+                    <ul class="footer-text list-unstyled mt-4">
+                        <li><a href="#"><i class="mdi mdi-arrow-right me-2"></i>Security & Provciy</a></li>
+                        <li><a href="#"><i class="mdi mdi-arrow-right me-2"></i>Support</a></li>
+                        <li><a href="#"><i class="mdi mdi-arrow-right me-2"></i>Term & Condition</a></li>
+                        <li><a href="#"><i class="mdi mdi-arrow-right me-2"></i>Contact</a></li>
+                        <li><a href="#"><i class="mdi mdi-arrow-right me-2"></i>About Us</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-3 mt-4">
+                    <h5 class="text-white">Linkedin</h5>
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="linkedin-box mt-4">
+                                <p class="mb-0 text-white-50 fs-15 mb-2">The full monty spiffing good time .</p>
+                                <a href="#" class="fs-15">@Harold.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="linkedin-content d-flex align-items-center">
+                        <div class="icon">
+                            <i class="mdi mdi-linkedin text-white fs-40"></i>
+                        </div>
+                        <div class="icon-content ms-2">
+                            <a href="#" class="text-white-50">Linkedin</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <h5 class="text-white">Sign up</h5>
+                    <p class="mb-0 text-white-50 mt-4">Follow our newsletter to stay updated about agency.</p>
+                    <div class="input-group my-3">
+                        <input type="text" class="form-control p-3" placeholder="subscribe" aria-label="subscribe"
+                            aria-describedby="basic-addon2">
+                        <a href="" class="input-group-text bg-primary text-white px-4" id="basic-addon2">Go</a>
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <!-- end container -->
+    </section>
+
+    <section class="bottom-footer py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <p class="mb-0 text-center text-muted">©
+                        <script>document.write(new Date().getFullYear())</script> Harold. Design with <i
+                            class="mdi mdi-heart text-danger"></i> by <a href="https://themesdesign.in/" target="_blank"
+                            class="text-muted">Themesdesign.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end footer -->
+
+
+    <!--Bootstrap Js-->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Slider Js -->
+    <script src="{% static 'js/tiny-slider.js' %}"></script>
+    <!-- <script src="js/tiny-slider.js"></script> -->
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <!-- conter -->
+    <script src="{% static 'js/counter.init.js' %}"></script>
+    <!-- App Js -->
+    <script src="{% static 'js/app.js' %}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"></script>
+
+</body>
+
+</html>
