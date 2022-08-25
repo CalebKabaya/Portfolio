@@ -11,6 +11,7 @@ def welcome(request):
     services=Services.objects.all()
     projects=Projects.objects.all()
     allskills=AllSkills.objects.all()
+    testimonials=Testimonials.objects.all()
 
     context= {
         'homes':homes,
@@ -21,8 +22,19 @@ def welcome(request):
         'services':services,
         'projects':projects,
         'allskills':allskills,
+        'testimonials':testimonials
 
 
     }
 
     return render(request, 'index-3.html',context)
+
+def allprojects(request):
+    projects=Projects.objects.all()
+
+    context={
+        'projects':projects
+    }
+
+    return render (request, 'projects.html',context)
+    
