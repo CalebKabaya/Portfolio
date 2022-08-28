@@ -11,6 +11,7 @@
     <meta name="keywords" content="" />
     <meta content="Themesdesign" name="author" />
     <link rel="shortcut icon" href="{{'static/images/favicon.ico'}}">
+
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" id="bootstrap-style">
     <!-- Material Icon Css -->
@@ -104,124 +105,112 @@
 
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered ">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <form class="row g-3 needs-validation">
-                        <div class="col-md-6">
-                            <label for="validationCustom01" class="form-label">First name <span
-                                    class="text-primary">*</span></label>
-                            <input type="text" class="form-control" id="validationCustom01" value="" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="validationCustom02" class="form-label">Email <span
-                                    class="text-primary">*</span></label>
-                            <input type="email" class="form-control" id="validationCustom02" value="" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="validationCustom03" class="form-label">Subject <span
-                                    class="text-primary">*</span></label>
-                            <input type="text" class="form-control" id="validationCustom03" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid city.
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="validationCustom05" class="form-label">Password <span
-                                    class="text-primary">*</span></label>
-                            <input type="password" class="form-control" id="validationCustom05" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid zip.
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <label for="validationTextarea" class="form-label">Textarea<span
-                                    class="text-primary">*</span></label>
-                            <textarea class="form-control" id="validationTextarea" required></textarea>
-                            <div class="invalid-feedback">
-                                You must agree before submitting.
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary" type="submit">Submit form</button>
-                        </div>
-                    </form>
-                </div>
 
-            </div>
-        </div>
-    </div>
-    <!-- end modal -->
 
 
 
 
     <!-- start counter -->
     <section class="section counter" id="counter">
-        <!-- start container -->
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="text-center mb-4">
-                        <h6 class="mb-0 text-muted fs-15">Counter</h6>
-                        <h2>My Skills </h2>
-                        <p class="para-width text-muted mb-0 fs-15">A Private Limited is the most popular type of
-                            partnership Malta. The limited liability is, in fact, the only type of company allowed by
-                            Companies.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- end row -->
-          
-            <!-- <div class="row row-cols-1 row-cols-md-3 g-4"> -] -->
-                <!-- {% for project in projects %}
 
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="{{project.image.url}}" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+        <div class="container" id="indexcontainer">
+        
+            <div class="featured">
+           </div>
+            <section id="content">
+              <div class="row">
+                <div class="col-md-8">
+                  <img src="{{singleproject.image.url}}" class="img-fluid" />
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <p class="mb-0" id="header">User Story:</p>
+                    </div>
+                    <div class="col-sm-8">
+                      <p class="text-muted mb-0"> {{singleproject.user_story}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <p class="mb-0" id="header">Title:</p>
+                      </div>
+                      <div class="col-sm-8">
+                        <p class="text-muted mb-0" id="title1">{{singleproject.title}}</p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <p class="mb-0" id="header">Description:</p>
+                      </div>
+                      <div class="col-sm-8">
+                        <p class="text-muted mb-0">{{singleproject.description}}</p>
+                      </div>
+                    </div>
+                    <hr>
+                 
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <p class="mb-0" id="header">Stacks:</p>
+                      </div>
+                      <div class="col-sm-8">
+                        <p class="text-muted mb-0"> {{singleproject.technologies}}</p>
+                      </div>
+                    </div>
+                  
+        
+                 
+                    <div class="row mt-4">
+                      <div class="col-sm-4">
+                      </div>
+                      <div class="col-sm-8">
+                        <a href="{{post.link}}" class="btn btn-outline-danger " style="text-align:center"id="btn1">Visit Project</a>
+          
+                      </div>
+                    </div>
+                  </div>
+          
+              </div>
+              </div>
+          
+            </section>
+            
+          </div>
+        <!-- start container -->
+        <!-- <div class="container">
+            <div class="card mb-3" >
+                <div class="row g-0">
+                  <div class="col-md-6">
+                    <img
+                      src="{{singleproject.image.url}}"
+                      alt=""
+                      class="img-fluid "
+                    />
+                  </div>
+                  <div class="col-md-6">
                     <div class="card-body">
-                      <h5 class="card-title">{{project.title}}</h5>
+                      <h5 class="card-title">{{singleproject.title}}</h5>
                       <p class="card-text">
-                        {{project.description}}
+                     {{singleproject.description}}
+                      </p>
+                      <p class="card-text">
+                        {{singleproject.user_story}}
+                         </p>
+                         <p class="card-text">
+                            {{singleproject.technologies}}
+                             </p>
+                      <p class="card-text">
+                        <small class="text-muted">Last updated 3 mins ago</small>
                       </p>
                     </div>
                   </div>
                 </div>
-                {% endfor %}
-
-                </div>  -->
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    {%for project in projects %}
-                    <div class="col">
-                      <div class="card h-100">
-                        <img src="{{project.image.url}}" class="card-img-top" alt="Skyscrapers"/>
-                        <div class="card-body">
-                          <h5 class="card-title">{{project.title}}</h5>
-                          <p class="card-text">
-                           {{project.description|slice:":120"}}
-                          </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="{% url 'singleproject' project_id=project.id%}" class="text-dark fw-semibold">View more <i
-                                class="mdi mdi-arrow-right fs-16"></i></a>
-                          <!-- <small class="text-muted">Read more!!</small> -->
-                        </div>
-                      </div>
-                    </div>
-                    {% endfor %}
-</div>
+              </div>
+            </div> -->
+            
           
     </section>
     <!-- end counter -->

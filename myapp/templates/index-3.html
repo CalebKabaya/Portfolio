@@ -51,11 +51,11 @@
 
 
     <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
+    <nav class="navbar navbar-expand-lg fixed-top sticky trasparent" id="navbar">
         <div class="container-fluid custom-container">
             <a class="navbar-brand logo text-uppercase" href="index.html">
-                <img src="images/logo-light.png" class="logo-light" alt="" height="34">
-                <img src="images/logo-dark.png" class="logo-dark" alt="" height="34">
+                <img src="{{'static/images/logo-light.png'}}" class="logo-light" alt="" height="34">
+                <img src="{{'static/images/logo-dark.png'}}" class="logo-dark" alt="" height="34">
             </a>
 
             <button class="navbar-toggler me-3 order-2 ms-4" type="button" data-bs-toggle="collapse"
@@ -74,19 +74,19 @@
                     <li class="nav-item dropdown dropdown-hover">
                         <a href="#service" class="nav-link ">Service</a>
                     </li>
-
-                    <li class="nav-item dropdown dropdown-hover">
-                        <a href="#work" class="nav-link ">Work</a>
-                    </li>
                     <li class="nav-item">
-                        <a href="#pricing" class="nav-link">Pricing</a>
+                        <a href="#skills" class="nav-link">Skills</a>
                     </li>
+                    <li class="nav-item dropdown dropdown-hover">
+                        <a href="{% url 'projects'%}" class="nav-link ">Projects</a>
+                    </li>
+                    
                     <li class="nav-item">
                         <a href="#testi" class="nav-link">Testimonial</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="#blog" class="nav-link">Blog</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a href="#contact" class="nav-link">Contact</a>
                     </li>
@@ -230,7 +230,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="home-bg-image mt-4 mt-lg-0">
-                                <img src="images/home/home-3/DSC_5576.JPG" alt="" class="img-fluid">
+                                <img src="{{'static/images/home/home-3/DSC_556.JPG'}}" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -252,7 +252,7 @@
                     <div class="col-lg-6 position-relative">
                         <div class="image-round"></div>
                         <div class="about-image p-4 pb-0">
-                            <img src="images/about.png" alt="" class="img-fluid">
+                            <img src="{{'static/images/bout.png'}}" alt="" class="img-fluid">
                         </div>
                     </div>
 
@@ -296,27 +296,7 @@
                                         </div>
                                     </div>
 
-                                    <!-- <div class="skill-item mt-4 pt-2">
-                                        <div class="d-flex justify-content-between">
-                                            <h6>Design</h6>
-                                            <h6>95%</h6>
-                                        </div>
-                                        <div class="progress" style="height: 5px;">
-                                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="95"
-                                                aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
-                                        </div>
-                                    </div> -->
-
-                                    <!-- <div class="skill-item mt-4 pt-2">
-                                        <div class="d-flex justify-content-between">
-                                            <h6>Branding</h6>
-                                            <h6>80%</h6>
-                                        </div>
-                                        <div class="progress" style="height: 5px;">
-                                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="80"
-                                                aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                                        </div>
-                                    </div> -->
+                               
                                     {% endfor%}
                                 </div>
                                 <div class="tab-pane fade" id="pills-profile" role="tabpanel"
@@ -417,7 +397,7 @@
 
 
     <!-- start counter -->
-    <section class="section counter" id="counter">
+    <section class="section counter" id="skills">
         <!-- start container -->
         <div class="container">
             <div class="row justify-content-center">
@@ -470,7 +450,7 @@
                         <p class="fs-15 text-muted">Prefect solution for digital experience</p>
                     </div>
                     <div class="right-text ms-auto">
-                        <a href="" class="text-primary border-2 border-primary border-bottom">More Work <img
+                        <a href="{% url 'projects'%}" class="text-info border-2 border-info border-bottom">More Work <img
                                 src="{{'static/images/home/right-arrow-primary.png'}}" alt=""
                                 class="img-fluid mb-1 ms-2"></a>
                         <!-- <img src="{{'static/images/counter/idea.png'}}" alt="" class="img-fluid"> -->
@@ -489,7 +469,7 @@
                         <div class="card">
                             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                 <img src="{{project.image.url}}" class="img-fluid" />
-                                <a href="#!">
+                                <a href="{% url 'singleproject' project_id=project.id%}">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </a>
                             </div>
@@ -497,7 +477,7 @@
                                 <h5 class="card-title">{{project.title}}</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the
                                     bulk of the card's content.</p>
-                                <a href="#!" class="btn btn-primary">View</a>
+                                <a href="{% url 'singleproject' project_id=project.id%}" class="btn btn-primary">View</a>
                             </div>
                         </div>
                         {% endfor %}
