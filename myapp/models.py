@@ -152,7 +152,14 @@ class Projects(models.Model):
     image=CloudinaryField('image', blank=True)
     title=models.CharField(max_length=50, blank=True)
     description=models.TextField(max_length=500, blank=True)
-    user_story=models.TextField(max_length=500, blank=True)
+    user_story=models.CharField(max_length=500, blank=True)
+    user_story1=models.CharField(max_length=500, blank=True)
+    user_story2=models.CharField(max_length=500, blank=True)
+    user_story3=models.CharField(max_length=500, blank=True)
+    user_story4=models.CharField(max_length=500, blank=True)
+    user_story5=models.CharField(max_length=500, blank=True)
+    user_story6=models.CharField(max_length=500, blank=True)
+
     technologies=models.CharField(max_length=40, blank=True)
     link=models.URLField(blank=True)
 
