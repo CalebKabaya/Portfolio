@@ -37,4 +37,13 @@ def allprojects(request):
     }
 
     return render (request, 'projects.html',context)
-    
+
+def project(request,project_id):
+    singleproject=Projects.objects.get(id=project_id)
+
+    context={
+        'singleproject':singleproject
+    }
+
+    return render (request, 'singleproject.html',context)
+
