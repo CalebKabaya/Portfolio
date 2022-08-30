@@ -82,6 +82,8 @@
     font-size: 50px;
   }
 }
+
+
 /**********************NAVBAR***********************/
 .navbar {
   transition: all 0.5s ease;
@@ -1750,6 +1752,19 @@ body[data-layout-mode=dark] .breadcrumb {
 .home-6 .bottom-item .home6-slider .item img {
   border-radius: 20px;
 }
+/* card */
+/* #card-work{
+  margin: 10px;
+} */
+/* single ........................................*/
+
+
+
+
+
+/* single ........................................*/
+
+
 
 @media (max-width: 1600px) {
   .home-5 {

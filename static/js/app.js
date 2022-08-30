@@ -367,3 +367,9 @@ function fadeIn() {
   }, 200);
 }
 
+$(document).ready(function($) {
+  $('.counter_value').counterUp({
+      delay: 2,
+      time: 1000
+  });
+});
