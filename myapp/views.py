@@ -12,6 +12,7 @@ def welcome(request):
     projects=Projects.objects.all()
     allskills=AllSkills.objects.all()
     testimonials=Testimonials.objects.all()
+    address=Address.objects.all()
 
     context= {
         'homes':homes,
@@ -22,7 +23,8 @@ def welcome(request):
         'services':services,
         'projects':projects,
         'allskills':allskills,
-        'testimonials':testimonials
+        'testimonials':testimonials,
+        'address':address
 
 
     }
@@ -31,18 +33,34 @@ def welcome(request):
 
 def allprojects(request):
     projects=Projects.objects.all()
+    address=Address.objects.all()
+    abouts=About.objects.all()
+
+
 
     context={
-        'projects':projects
+        'projects':projects,
+        'address':address,
+        'abouts':abouts,
+
+
     }
 
     return render (request, 'projects.html',context)
 
 def project(request,project_id):
     singleproject=Projects.objects.get(id=project_id)
+    address=Address.objects.all()
+    abouts=About.objects.all()
+
+
 
     context={
-        'singleproject':singleproject
+        'singleproject':singleproject,
+        'address':address,
+        'abouts':abouts,
+
+
     }
 
     return render (request, 'singleproject.html',context)
