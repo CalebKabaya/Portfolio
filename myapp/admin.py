@@ -11,6 +11,10 @@ admin.site.register(Projects)
 admin.site.register(AllSkills)
 admin.site.register(Testimonials)
 admin.site.register(Address)
+admin.site.register(MyCV)
+admin.site.register(Achiev)
+
+
 
 
 
