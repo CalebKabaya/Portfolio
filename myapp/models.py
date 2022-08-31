@@ -199,7 +199,9 @@ class Testimonials(models.Model):
 
 class MyCV(models.Model):
 
-    cv=models.FileField(upload_to='documents')
+    cv=models.FileField(upload_to='documents',blank=True)
+    certificate=models.FileField(upload_to='documents',blank=True)
+
 
     def __str__(self):
         return f'{self.cv}'
@@ -225,6 +227,27 @@ class Address(models.Model):
 
     def __str__(self):
         return f'{self.address}'
+
+    def save_post(self):
+        self.save()
+
+    def delete_post(self):
+        self.delete()
+
+    @classmethod
+    def all_posts(cls):
+        return cls.objects.all() 
+
+class Achiev(models.Model):
+    clients=models.IntegerField( blank=True)
+    projects=models.IntegerField( blank=True)
+    review=models.IntegerField( blank=True)
+    years=models.IntegerField( blank=True)
+
+  
+
+    def __str__(self):
+        return f'{self.clients}'
 
     def save_post(self):
         self.save()
