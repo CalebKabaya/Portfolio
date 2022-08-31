@@ -10,8 +10,7 @@
     <meta name="description" content=" " />
     <meta name="keywords" content="" />
     <meta content="Themesdesign" name="author" />
-    <link rel="shortcut icon" href="{{'static/images/favicon.ico'}}">
-
+    <link rel="shortcut icon" href="{% static 'images/favicon.png'%}">
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" id="bootstrap-style">
     <!-- Material Icon Css -->
@@ -54,10 +53,13 @@
     <!--Navbar Start-->
     <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
         <div class="container-fluid custom-container">
-            <a class="navbar-brand logo text-uppercase" href="index.html">
-                <img src="images/logo-light.png" class="logo-light" alt="" height="34">
-                <img src="images/logo-dark.png" class="logo-dark" alt="" height="34">
+            <a class="navbar-brand logo text-uppercase" href="{% url 'index' %}">
+                <img src="{% static 'images/logos/logo-light.png'%}"class="logo-light" alt="logo" height="36">
+
+                <img src="{% static 'images/logos/logo-dark.png'%}"class="logo-dark" alt="logo" height="36">
+
             </a>
+
 
             <button class="navbar-toggler me-3 order-2 ms-4" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-label="Toggle navigation">
@@ -94,14 +96,77 @@
                 </ul>
                 <!--end navbar-nav-->
                 <div class="ms-auto ps-2 ps-lg-0">
-                    <a href="" class="btn btn-dark rounded-pill my-3 my-lg-0" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">Login</a>
+                    <a href="#contact" class="btn btn-dark rounded-pill my-3 my-lg-0" data-bs-toggle="#"
+                        data-bs-target="#">Hire Me</a>
                 </div>
             </div>
         </div>
         <!--end container-->
     </nav>
     <!-- Navbar End -->
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form class="row g-3 needs-validation">
+                        <div class="col-md-6">
+                            <label for="validationCustom01" class="form-label">First name <span
+                                    class="text-primary">*</span></label>
+                            <input type="text" class="form-control" id="validationCustom01" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom02" class="form-label">Email <span
+                                    class="text-primary">*</span></label>
+                            <input type="email" class="form-control" id="validationCustom02" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom03" class="form-label">Subject <span
+                                    class="text-primary">*</span></label>
+                            <input type="text" class="form-control" id="validationCustom03" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom05" class="form-label">Password <span
+                                    class="text-primary">*</span></label>
+                            <input type="password" class="form-control" id="validationCustom05" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid zip.
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <label for="validationTextarea" class="form-label">Textarea<span
+                                    class="text-primary">*</span></label>
+                            <textarea class="form-control" id="validationTextarea" required></textarea>
+                            <div class="invalid-feedback">
+                                You must agree before submitting.
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end modal -->
 
 
 
@@ -128,7 +193,7 @@
                       <p class="mb-0" id="header">User Story:</p>
                     </div>
                     <div class="col-sm-8">
-                      <p class="text-muted mb-0"> {{singleproject.user_story}}</p>
+                      <p class="mb-0"> {{singleproject.user_story}}</p>
                     </div>
                   </div>
                 </div>
@@ -139,7 +204,7 @@
                         <p class="mb-0" id="header">Title:</p>
                       </div>
                       <div class="col-sm-8">
-                        <p class="text-muted mb-0" id="title1">{{singleproject.title}}</p>
+                        <p class=" mb-0" id="title1">{{singleproject.title}}</p>
                       </div>
                     </div>
                     <hr>
@@ -148,7 +213,7 @@
                         <p class="mb-0" id="header">Description:</p>
                       </div>
                       <div class="col-sm-8">
-                        <p class="text-muted mb-0">{{singleproject.description}}</p>
+                        <p class="mb-0">{{singleproject.description}}</p>
                       </div>
                     </div>
                     <hr>
@@ -158,7 +223,7 @@
                         <p class="mb-0" id="header">Stacks:</p>
                       </div>
                       <div class="col-sm-8">
-                        <p class="text-muted mb-0"> {{singleproject.technologies}}</p>
+                        <p class=" mb-0"> {{singleproject.technologies}}</p>
                       </div>
                     </div>
                   
@@ -168,7 +233,11 @@
                       <div class="col-sm-4">
                       </div>
                       <div class="col-sm-8">
-                        <a href="{{post.link}}" class="btn btn-outline-danger " style="text-align:center"id="btn1">Visit Project</a>
+                        <div class="button-group d-flex mt-3">
+                            <a href="{{singleproject.link}}"><button class="btn btn-dark" id="exampleModalLabel">View Site
+                                    </button></a>
+                           
+                        </div>
           
                       </div>
                     </div>
@@ -226,7 +295,7 @@
     <div class="container">
 
         <div class="shape-1">
-            <img src="images/testi/shape.png" alt="" class="img-fluid">
+            <img src="{{'static/images/testi/shape.png'}}" alt="" class="img-fluid">
         </div>
 
         <div class="contact-item">
@@ -283,8 +352,8 @@
                 </div>
                 <div class="col-lg-7 ">
                     <div class="custom-form mt-4 ">
-                        <form method="post" name="myForm" onsubmit="return validateForm()">
-
+                        <form action="https://formspree.io/f/mqkjavaz" method="POST" name="contact">
+                            {% csrf_token %}
                             <h6 class="mb-0 text-muted">Let's talk</h6>
                             <h3>Contact Me</h3>
                             <p class=" fs-15 text-muted">For all enquiries, you can reach me through a text, phone call, my socials or you can email me through the form below.</p>
@@ -311,7 +380,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2">
-                                        <input type="text" class="form-control contact-form" id="subject"
+                                        <input type="text" class="form-control contact-form"  name="subject" id="subject"
                                             placeholder="Your Subject..">
                                     </div>
                                 </div>
@@ -319,7 +388,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2">
-                                        <textarea name="comments" id="comments" rows="4"
+                                        <textarea name="message" id="comments" rows="4"
                                             class="form-control contact-form h-auto"
                                             placeholder="Your message..."></textarea>
                                     </div>
@@ -327,7 +396,7 @@
                             </div>
                             <div class="row my-2">
                                 <div class="col-lg-12 d-grid">
-                                    <input type="submit" id="submit" name="send"
+                                    <input type="submit" id="submit" name="s"
                                         class="submitBnt btn btn-rounded btn-primary" value="Send Message">
                                 </div>
                             </div>
@@ -338,11 +407,11 @@
         </div>
 
         <div class="shape-2">
-            <img src="images/testi/shape-2.png" alt="" class="img-fluid">
+            <img src="{{'static/images/testi/shape-2.png'}}" alt="" class="img-fluid">
         </div>
 
         <div class="shape-3 ">
-            <img src="images/testi/shape-3.png" alt="" class="img-fluid">
+            <img src="{{'static/images/testi/shape-3.png'}}" alt="" class="img-fluid">
         </div>
     </div>
     <!-- end container -->
@@ -436,13 +505,16 @@
             </div>
 
             <div class="col-lg-4 mt-4">
-                <h5 class="text-white">Sign up</h5>
-                <p class="mb-0 text-white-50 mt-4">Follow our newsletter to stay updated about agency.</p>
-                <div class="input-group my-3">
-                    <input type="text" class="form-control p-3" placeholder="subscribe" aria-label="subscribe"
-                        aria-describedby="basic-addon2">
-                    <a href="" class="input-group-text bg-primary text-white px-4" id="basic-addon2">Go</a>
-                </div>
+                <h5 class="text-white">Services</h5>
+                <ul class="footer-text list-unstyled mt-4">
+                    <li><a href="{% url 'index'%}"><i class="mdi mdi-arrow-right me-2"></i>Web Development</a></li>
+                    <li><a href="{% url 'index'%}"><i class="mdi mdi-arrow-right me-2"></i>Web Design</a></li>
+                    <li><a href="{% url 'index'%}"><i class="mdi mdi-arrow-right me-2"></i>UI/UX Design</a></li>
+                    <li><a href="{% url 'index'%}"><i class="mdi mdi-arrow-right me-2"></i>Deployment</a></li>
+                    <li><a href="{% url 'index'%}"><i class="mdi mdi-arrow-right me-2"></i>WordPress</a></li>
+
+                  
+                </ul>
                 <p></p>
             </div>
         </div>
@@ -475,6 +547,17 @@
     <script src="{% static 'js/counter.init.js' %}"></script>
     <!-- App Js -->
     <script src="{% static 'js/app.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        $(() => {
+
+            $('.contact').submit(() => {
+                let name = $('#name').val()
+                alert(`Hello ${name}, Your message has been received successfully. Thank you for contacting me, I will email you back with a response to your subject..`)
+            })
+        })
+    </script>
 
 </body>
 
