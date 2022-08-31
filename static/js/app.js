@@ -373,3 +373,13 @@ $(document).ready(function($) {
       time: 1000
   });
 });
+
+
+
+$(()=>{
+  
+  $('.contact').submit(()=>{
+      let name = $('#name').val()
+      alert(`Hello ${name}, Your feedback has been received succeessfully. Thank you for contacting Dev Okunzo`)
+  })
+})
