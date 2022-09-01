@@ -1,0 +1,12 @@
+asgiref==3.5.2
+certifi==2022.6.15
+cloudinary==1.29.0
+dj-database-url==1.0.0
+Django==4.0.6
+django-heroku==0.3.1
+psycopg2==2.9.3
+python-decouple==3.6
+six==1.16.0
+sqlparse==0.4.2
+urllib3==1.26.12
+whitenoise==6.2.0
