@@ -185,7 +185,7 @@ class Testimonials(models.Model):
 
 
     def __str__(self):
-        return f'{self.testimonial}'
+        return f'{self.name}'
 
     def save_post(self):
         self.save()
