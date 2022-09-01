@@ -155,7 +155,7 @@ class Projects(models.Model):
     user_story=models.TextField(max_length=500, blank=True)
 
 
-    technologies=models.CharField(max_length=40, blank=True)
+    technologies=models.CharField(max_length=70, blank=True)
     link=models.URLField(blank=True)
 
 
